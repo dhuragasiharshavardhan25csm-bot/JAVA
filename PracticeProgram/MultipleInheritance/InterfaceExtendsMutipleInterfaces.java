@@ -27,7 +27,7 @@ class Demo implements C {
     }
 }
 
-public class IntarfaceExtendsMutipleInterfaces {
+public class InterfaceExtendsMutipleInterfaces {
 
     public static void main(String[] args) {
 
