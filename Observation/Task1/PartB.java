@@ -1,101 +1,60 @@
-import java.util.Scanner;
+class Book{
+    private int bookId;
+    private String bookName;
+    private String author;
+    private double price;
 
-public class PartB {
-    public static void main(String[] args){
-       Scanner sc= new Scanner(System.in);
-
-       System.out.println("Enter your choice:");
-       System.out.println("1.Even or odd");
-       System.out.println("2.largest of 3 numbers");
-       System.out.println("3.Grade");
-       System.out.println("4.Days of a Week");
-
-       int ch=sc.nextInt();
-
-       switch(ch){
-
-         case 1:
-             System.out.println("Enetr a number:");
-             int num=sc.nextInt();
-
-             if(num%2==0){
-                System.out.println(num+"is a even number");
-             }else{
-                System.out.println(num+"is an odd number");
-
-             }
-             break;
-
-         case 2:
-            System.out.println("enter 3 numbers");
-            int a=sc.nextInt();
-            int b=sc.nextInt();
-            int c=sc.nextInt();
-
-            if(a>b && a>c){
-                System.out.println(a+"is the largest number");
-
-            }else if(b>c){
-                System.out.println(b+"is the largest number");
-
-            }else{
-                System.out.println(c+"is the largest number");
-            }
-            break;
-
-         case 3:
-            System.out.println("enetr teh percentage:");
-            double per=sc.nextDouble();
-
-            if(per>=90){
-                System.out.println("Grade A");
-            }else if(per>=80){
-                System.out.println("Grade B");
-            }else if(per>=70){
-                System.out.println("Grade C");
-            }else if(per>=60){
-                System.out.println("Grade D");
-            }else{
-                System.out.println("Grade E");
-            }
-            break;
-
-         case 4:
-            System.out.println("enter the Day number(1-7)");
-            int day=sc.nextInt();
-
-            switch(day){
-               case 1:
-                System.out.println("Monday");
-                break;
-               case 2:
-                System.out.println("Tuesday");
-                break;
-               case 3:
-                System.out.println("wednesday");
-                break;
-               case 4:
-                System.out.println("Thursday");
-                break;
-               case 5:
-                System.out.println("Friday");
-                break;
-               case 6:
-                System.out.println("satday");
-                break;
-               case 7:
-                System.out.println("Sunday");
-                break;
-              default:
-                System.out.println("enter a valid choice");
-                break;
-                
-                
-            }
-        sc.close();
-
-
-        }
+    //constructer
+    Book(){
+        bookId=0;
+        bookName="unknown";
+        author="unknown";
+        price=0.00;
     }
 
+    //constructer with parameters
+    Book(int id,String name,String aut,double p){
+        bookId=id;
+        bookName=name;
+        author=aut;
+        price=p;
+    }
+      // getters & setters for Encapsulation
+    public int getBookId(){
+         return bookId; 
+        }
+    public void setBookId(int id){
+         bookId = id;
+         }
+
+    public String getBookName(){ 
+        return bookName; 
+    }
+    public void setBookName(String name){ 
+        bookName = name; 
+    }
+
+    public String getAuthor(){
+         return author; 
+        }
+    public void setAuthor(String aut){
+         author = aut; 
+        }
+
+    public double getPrice(){ return price; 
+
+    }
+    public void setPrice(double p){ 
+        price = p; 
+    }
+
+    public void details() {
+        System.out.println(bookId + " | " + bookName + " | " + author + " | " + price);
+    }
+}
+public class PartB {
+    public static void main(String[] args){
+        Book obj=new Book(298137,"javaclass","nani",20.3);
+        obj.details();
+    }
 }
